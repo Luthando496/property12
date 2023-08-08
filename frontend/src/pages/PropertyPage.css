@@ -1,0 +1,18 @@
+.items-flex-start{
+    display: flex;
+    align-items: flex-start;
+}
+
+.place{
+    flex: 0 0 70%;
+}
+
+.contact{
+    flex: 0 0 30%;
+}
+
+@media screen and (max-width: 980px) {
+    .items-flex-start{
+        display: block;
+    }
+}
