@@ -11,3 +11,25 @@
   padding: 0px;
   box-sizing: border-box;
 }
+
+.swiper-horizontal > .swiper-pagination-bullets.swiper-pagination-bullets-dynamic, .swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullets-dynamic{
+  bottom: 5%;
+}
+
+
+.first-slide{
+  background:linear-gradient(rgba(14, 12, 12, 0.151),rgba(15, 15, 15, 0.486)), url('/images/pexels-julia-kuzenkov-1974596.jpg');
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+}
+
+
+.second-slide{
+  background:url('/images/pexels-valeriia-1miller-2587054.jpg');
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+}

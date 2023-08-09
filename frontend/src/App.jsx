@@ -1,4 +1,14 @@
 import { useState } from 'react'
+// import Swiper bundle with all modules installed
+import 'swiper/css';
+// import styles bundle
+import 'swiper/css/bundle';
+// npm install slick-carousel
+
+// Import css files
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+// 
 import {Route,Routes} from 'react-router-dom'
 import Home from './pages/Home'
 import PropertyPage from './pages/PropertyPage'
