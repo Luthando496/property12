@@ -4,7 +4,7 @@ import { Avatar, AvatarBadge, AvatarGroup } from '@chakra-ui/react'
 
 const Navbar = () => {
   return (
-    <nav className='w-full bg-white py-4'>
+    <nav className='w-full bg-white py-4 sticky top-0 z-50'>
         <div className="flex justify-between items-center px-3">
             <Link to='/'>
                 <img src="/images/Estate.png" alt="logo" className="w-[15rem] h-[3rem] object-cover" />

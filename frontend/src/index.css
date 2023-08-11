@@ -31,5 +31,12 @@
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;
-  
+}
+
+
+.third-slide{ 
+  background:url('/images/pexels-eberhard-grossgasteiger-1612351.jpg');
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
