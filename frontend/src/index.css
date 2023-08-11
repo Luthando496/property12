@@ -40,3 +40,12 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+
+.sticky-back{ 
+  background:linear-gradient(rgba(92, 221, 182, 0.532),rgba(3, 161, 109, 0.404)),url('/images/pexels-eberhard-grossgasteiger-1612351.jpg');
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}

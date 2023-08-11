@@ -13,13 +13,10 @@ const Navbar = () => {
                 <NavLink className='uppercase text-black/80' to='/'>
                     Home
                 </NavLink>
-                <NavLink className='uppercase text-black/80' to='/'>
-                    Properties
-                </NavLink>
-                <NavLink className='uppercase text-black/80' to='/'>
+                <NavLink className='uppercase text-black/80' to='/about-us'>
                     About Us
                 </NavLink>
-                <NavLink className='uppercase text-black/80' to='/'>
+                <NavLink className='uppercase text-black/80' to='/contact'>
                     Contact Us
                 </NavLink>
             </ul>

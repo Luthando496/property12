@@ -2,7 +2,7 @@ import React from 'react'
 import './Home.css'
 import {Link} from 'react-router-dom'
 import { Navigation, Pagination, Scrollbar, A11y,Parallax  } from 'swiper/modules';
-import {FaFacebook,FaTwitter,FaYoutube,FaInstagram} from 'react-icons/fa'
+import {FaFacebook,FaTwitter,FaYoutube,FaInstagram,FaPhone} from 'react-icons/fa'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import HomeCard from '../components/HomeCard';
 
@@ -62,7 +62,7 @@ const Home = () => {
    
     </Swiper>
 
-<section className="py-24 w-full">
+    <section className="py-24 w-full">
       <div className="grid px-8 grid-cols-1 lg:grid-cols-2 gap-6">
       {/*  */}
       <div className="w-full py-10">
@@ -187,7 +187,18 @@ const Home = () => {
 
     </section>
 
-    <section className="w-full py-20">
+    <section className="w-full sticky-back py-20">
+    <div className="text-center flex justify-center items-center w-full">
+      <h1 className="text-2xl tracking-[5px] text-center items-center font-bold text-white flex gap-4"><FaPhone /> +888 222 786</h1>
+    </div>
+      <div className="w-full flex mt-4 mb-6 justify-center">
+      <div className="w-[5rem] h-1 bg-orange-400"></div>
+      </div>
+        <h2 className="text-black text-center text-2xl font-semibold">Call us 24/7 for any property problem</h2>
+
+        <div className="flex justify-center py-7 w-[90%] md:w-[75%] mx-auto">
+          <p className="text-base font-normal text-white text-center">Building below the fold while remembering to think outside the box. Creating customer journeys and finally maximise share of voice.</p>
+        </div>
 
     </section>
 
