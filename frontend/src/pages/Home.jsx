@@ -2,7 +2,7 @@ import React from 'react'
 import './Home.css'
 import {Link} from 'react-router-dom'
 import { Navigation, Pagination, Scrollbar, A11y,Parallax  } from 'swiper/modules';
-import {FaFacebook,FaTwitter,FaYoutube,FaInstagram,FaPhone} from 'react-icons/fa'
+import {FaFacebook,FaTwitter,FaYoutube,FaInstagram,FaPhone,FaSearch} from 'react-icons/fa'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import HomeCard from '../components/HomeCard';
 
@@ -17,6 +17,19 @@ const Home = () => {
 
   return (
       <>
+
+    <section className="py-10 w-full bg-gray-200">
+    <h2 className="text-center text-2xl font-play tracking-[4px] font-thin lg:text-3xl text-teal-500">Property For <span className="text-sky-500">Sale</span> </h2>
+    <div className=" my-14 w-full px-8 md:w-[70%] mx-auto">
+      <div className="f dw-full flex relative">
+        <input type="text" className="w-full font-thin text-xl px-10 focus:text-gray-400 tracking-widest focus:outline-none focus:border focus:border-teal-500 text-gray-600 rounded-l-xl py-2 relative" />
+          {/* <FaSearch className="absolute text-teal-600 text-3xl  top-[5px] right-[15px] transform -translate-x-1" /> */}
+          <button className="px-3 md:px-8 py-2 text-white md:tracking-[3px] font-semibold uppercase bg-teal-500">Search</button>
+      </div>
+    </div>
+
+    </section>
+
       <Swiper
             style={{
           '--swiper-navigation-color': '#fdff',
@@ -105,7 +118,20 @@ const Home = () => {
     
 
     
- 
+    <section className="w-full sticky-back py-20">
+    <div className="text-center flex justify-center items-center w-full">
+      <h1 className="text-2xl tracking-[5px] text-center items-center font-bold text-white flex gap-4"><FaPhone /> +888 222 786</h1>
+    </div>
+      <div className="w-full flex mt-4 mb-6 justify-center">
+      <div className="w-[5rem] h-1 bg-orange-400"></div>
+      </div>
+        <h2 className="text-black text-center text-2xl font-semibold">Call us 24/7 for any property problem</h2>
+
+        <div className="flex justify-center py-7 w-[90%] md:w-[75%] mx-auto">
+          <p className="text-base font-normal text-white text-center">Building below the fold while remembering to think outside the box. Creating customer journeys and finally maximise share of voice.</p>
+        </div>
+
+    </section>
     
 
 
@@ -187,20 +213,7 @@ const Home = () => {
 
     </section>
 
-    <section className="w-full sticky-back py-20">
-    <div className="text-center flex justify-center items-center w-full">
-      <h1 className="text-2xl tracking-[5px] text-center items-center font-bold text-white flex gap-4"><FaPhone /> +888 222 786</h1>
-    </div>
-      <div className="w-full flex mt-4 mb-6 justify-center">
-      <div className="w-[5rem] h-1 bg-orange-400"></div>
-      </div>
-        <h2 className="text-black text-center text-2xl font-semibold">Call us 24/7 for any property problem</h2>
-
-        <div className="flex justify-center py-7 w-[90%] md:w-[75%] mx-auto">
-          <p className="text-base font-normal text-white text-center">Building below the fold while remembering to think outside the box. Creating customer journeys and finally maximise share of voice.</p>
-        </div>
-
-    </section>
+    
 
 
 

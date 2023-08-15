@@ -8,6 +8,7 @@ export default {
     extend: {
       fontFamily: {
         play: ['Playfair Display', "sans-serif"],
+        poppins: ['Poppins', "sans-serif"],
       },
     },
   },

@@ -15,6 +15,7 @@ import PropertyPage from './pages/PropertyPage'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import About from './pages/About';
+import Contact from './pages/Contact';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -26,7 +27,7 @@ function App() {
     <Routes>
         <Route path='/'  element={<Home />}  />
         <Route path='/about-us'  element={<About />}  />
-        <Route path='/contact'  element={<About />}  />
+        <Route path='/contact'  element={<Contact />}  />
         <Route path='/single-house'  element={<PropertyPage />}  />
     </Routes>
 
