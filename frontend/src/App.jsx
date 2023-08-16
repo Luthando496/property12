@@ -15,6 +15,7 @@ import PropertyPage from './pages/PropertyPage'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import About from './pages/About';
+import Results from './pages/Results';
 import Contact from './pages/Contact';
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
         <Route path='/'  element={<Home />}  />
         <Route path='/about-us'  element={<About />}  />
         <Route path='/contact'  element={<Contact />}  />
+        <Route path='/search/:id'  element={<Results />}  />
         <Route path='/single-house'  element={<PropertyPage />}  />
     </Routes>
 

@@ -1,37 +1,18 @@
 import React from 'react'
-import { Navigation, Pagination, Scrollbar, A11y,Parallax  } from 'swiper/modules';
-
-import { Swiper, SwiperSlide } from 'swiper/react';
 
 
 
 
 const HomeCard = () => {
 
-    const images =[
-    {url:'/images/pexels-julia-kuzenkov-1974596.jpg'},
-    {url:'https://images.pexels.com/photos/2194399/pexels-photo-2194399.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'},
-    {url:'/images/pexels-eberhard-grossgasteiger-1612351.jpg'},
-    {url:'https://images.pexels.com/photos/633561/pexels-photo-633561.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'},
-    {url:'https://images.pexels.com/photos/1115804/pexels-photo-1115804.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'}
-  ]
+    
 
   return (
     <>
         <div className="w-full bg-white rounded-xl shadow-xl">
-          <div className="images-slider h-[15rem] rounded-t-xl">
-            <Swiper className='h-full rounded-t-xl' speed={300}  pagination={{clickable: true, }}
-            navigation={true}
-            modules={[Pagination, Navigation,A11y]}
-            >
-          {images.map((image,i)=>(
-            <SwiperSlide key={i} className='w-full h-[full] first-slide rounded-t-xl' style={{background:`url(${image.url})`,backgroundPosition:'center',backgroundSize:'cover'}} >
-              {/* <img src={image.url} alt="logo" className="w-full h-full rounded-t-xl" /> */}
-            </SwiperSlide>
-
-          ))}
-
-            </Swiper>
+          <div className="images-slider h-[15rem] rounded-t-xl relative" style={{background:`url(https://images.pexels.com/photos/1115804/pexels-photo-1115804.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)`,backgroundPosition:'center',backgroundSize:'cover'}}>
+          {/* <img src="" alt="" className="w-full h-full object-cover" /> */}
+          <span className="absolute top-8 left-0 px-4 bg-teal-400 text-white capitalize py-2">for rent</span>
 
             
           </div>
