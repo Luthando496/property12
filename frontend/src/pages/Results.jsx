@@ -65,9 +65,9 @@ const Results =()=>{
 
         </section>
 
-        <h2 className="my-10 pl-20 text-gray-500 text-3xl font-play ">Property for Sale in Stellenbosch</h2>
+        <h2 className="my-10 pl-5 md:pl-20 text-gray-500 text-3xl font-play ">Property for Sale in Stellenbosch</h2>
         
-        <div className="mb-10 pl-10 space-y-4">
+        <div className="mb-10 pl-5 md:pl-20 space-y-4">
             <h3 className="text-xl text-gray-400 font-semibold ">Order by:</h3>
             <select className='py-5 px-8 block rounded-lg bg-teal-400' name="Sort" id="">
                 <option value="">high to low</option>
@@ -77,9 +77,12 @@ const Results =()=>{
             </select>
         </div>
 
-        <section className="px-20 w-full py-14">
-        <div className="w-full grid grid-cols-3 gap-7">
+        <section className="px-4 md:px-10 lg:px-14 w-full pb-20">
+        <div className="w-full grid grid-cols-1 gap-y-10 md:gap-y-14 lg:gap-y-20 md:grid-cols-2 items-start  lg:grid-cols-3 gap-7">
             
+            <HomeCard  />
+            <HomeCard />
+            <HomeCard />
             <HomeCard />
             <HomeCard />
             <HomeCard />
