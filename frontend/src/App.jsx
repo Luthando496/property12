@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState,useEffect } from 'react'
 // import Swiper bundle with all modules installed
 import 'swiper/css';
 // import styles bundle
@@ -17,9 +17,14 @@ import Footer from './components/Footer'
 import About from './pages/About';
 import Results from './pages/Results';
 import Contact from './pages/Contact';
+import {useDispatch,useSelector} from 'react-redux'
+import { fetchAllHouses } from './store/actions/houseActions';
+
+
 
 function App() {
   const [count, setCount] = useState(0)
+  
 
   return (
     <>

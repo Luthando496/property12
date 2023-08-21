@@ -1,18 +1,27 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import './Home.css'
 import {Link} from 'react-router-dom'
 import { Navigation, Pagination, Scrollbar, A11y,Parallax  } from 'swiper/modules';
 import {FaFacebook,FaTwitter,FaYoutube,FaInstagram,FaPhone,FaSearch} from 'react-icons/fa'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import HomeCard from '../components/HomeCard';
-
+import {useDispatch,useSelector} from 'react-redux'
+import { fetchAllHouses } from '../store/actions/houseActions';
 // Import Swiper styles
 
 
 
 const Home = () => {
   
+  const dispatch = useDispatch()
+  const {isLoading,houses,error} = useSelector(state => state.house)
 
+  useEffect(() => {
+    dispatch(fetchAllHouses())
+  }, [dispatch])
+
+  console.log(isLoading)
+  console.log(houses)
   
 
   return (
@@ -148,12 +157,9 @@ const Home = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 mt-20 lg:grid-cols-3 gap-6 w-full">
         {/*  */}
-        <HomeCard />
-        <HomeCard />
-        <HomeCard />
-        <HomeCard />
-        <HomeCard />
-        <HomeCard />
+        {houses && houses.slice(7,13).map((house, index) => (
+          <HomeCard key={house.id} name={house.name} price={house.price} bed={house.bedrooms} location={house.location} bath={house.bathrooms} img={house.coverImage} />
+        ))}
 
 
         
