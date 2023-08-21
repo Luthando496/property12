@@ -1,14 +1,31 @@
-import React from 'react'
-import {Link} from 'react-router-dom'
+import React,{useEffect} from 'react'
+import {Link, useParams} from 'react-router-dom'
 import {VscStarFull} from 'react-icons/vsc'
 import {RxHeart,RxRulerSquare} from 'react-icons/rx'
 import {BsFillHouseFill,BsCheckLg} from 'react-icons/bs'
 import {FaBed} from 'react-icons/fa'
 import { Tabs, TabList, TabPanels, Tab, TabPanel,TabIndicator } from '@chakra-ui/react'
+import {useDispatch,useSelector} from 'react-redux'
+import { getHouseDetails } from '../store/actions/houseActions'
+import { Navigation, Pagination, Scrollbar, A11y,Parallax  } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
+
 
 
 
 const PropertyPage = () => {
+
+  const {home,isLoading} = useSelector(state => state.house)
+
+  const dispatch = useDispatch()
+  const {id} = useParams()
+
+
+  useEffect(()=>{
+
+    dispatch(getHouseDetails(id))
+
+  },[dispatch,id])
   return (
     <>
       <div className="w-full bg-header py-14 flex gap-2 pl-8 text-white">
@@ -24,7 +41,7 @@ const PropertyPage = () => {
       <section className="w-full py-20 bg-gray-300/10">
         <div className="px-1 grid grid-cols-1 lg:grid-cols-4 items-start gap-4 rounded-lg md:px-8 ">
           {/*  */}
-          <div className="w-full col-span-3 bg-white rounded-lg shadow-xl py-10 md:px-4">
+          {home && <div className="w-full col-span-3 bg-white rounded-lg shadow-xl py-10 md:px-4">
             <div className="flex items-center gap-2">
             <div className="flex items-center">
               <VscStarFull className='text-yellow-400' />
@@ -37,20 +54,42 @@ const PropertyPage = () => {
             <span><RxHeart className='text-sky-500 text-xl' /></span>
             
             </div>
-            <h2 className="text-2xl font-thin mt-6">Luxury villa in Rego Park</h2>
+            <h2 className="text-2xl font-thin mt-6">{home.name}</h2>
             <div className="flex items-center justify-center gap-4 mt-7">
               <div className="flex items-center gap-3">
                 <BsFillHouseFill className='text-sky-500' />  <span className="font-thin capitalize">Villa</span>
               </div>
               <div className="flex items-center gap-3">
-                <FaBed className='text-sky-500 text-xl' /> <span className="font-thin capitalize">3 rooms</span>
+                <FaBed className='text-sky-500 text-xl' /> <span className="font-thin capitalize">{home.bedrooms} rooms</span>
               </div>
               <div className="flex items-center gap-3">
                 <RxRulerSquare className='text-sky-500 text-base' /> <span className="font-thin capitalize">370 sqft</span>
               </div>
             </div>
             <div className="w-full h-[40rem] my-10 px-4">
-            <img src="https://v9m6d2m2.rocketcdn.me/elementor/demos/real-estate/wp-content/uploads/sites/65/2021/05/Image_7.jpg" alt="image" className="w-full h-full object-cover" />
+            <Swiper
+            style={{
+          '--swiper-navigation-color': '#fdff',
+          '--swiper-pagination-color': '#f7ff',
+        }}
+        speed={300}
+        // parallax={true}
+        pagination={{
+          clickable: true,
+        }}
+        navigation={true}
+        modules={[Parallax, Pagination, Navigation,A11y]}
+        className="mySwiper"
+      >
+        {home.images.map((image,index) => (
+          <SwiperSlide key={index}>
+            <img src={image.url} alt={image.alt} className="w-full h-full object-cover" />
+          </SwiperSlide>
+        ))}
+      
+      
+      
+    </Swiper>
 
             </div>
             <div className="w-full">
@@ -68,15 +107,7 @@ const PropertyPage = () => {
               <TabPanels>
                 <TabPanel>
                   <p className="text-base font-semibold leading-[1.9] font-gray-600">
-                  <span>
-                  Synchronising user experience and finally get buy in. Executing outside the box thinking but maximise share of voice. Inform user stories to get buy in. Repurpose sprints with the aim to disrupt the balance. Create scrum masters to, consequently, be transparent.
-                  </span>
-
-                  <span className="mt-3">
-                  Taking transformation mapping and above all, create synergy. Funneling responsive websites to, consequently, go viral. Drive bleeding edge to in turn create a better customer experience. Growing growth channels to in turn make users into advocates.
-                  </span> 
-
-                  Take stakeholder engagement in order to get buy in. Building above the line with the possibility to re-target key demographics. Targeting bleeding edge to target the low hanging fruit. Considering awareness with the possibility to be CMSable. Funneling awareness and then funnel users.
+                  {home.description}
                   </p>
 
                   <h3 className="text-sky-500/80 tracking-[2px] text-2xl mt-8 font-bold">Amenities</h3>
@@ -119,7 +150,7 @@ const PropertyPage = () => {
               </TabPanels>
             </Tabs>
             </div>
-          </div>
+          </div>}
           {/*  */}
           <div className="w-full col-span-1">
           <div className="w-full border">

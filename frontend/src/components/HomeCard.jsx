@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom'
 
 
 
-const HomeCard = ({location,price,name,bed,bath,img}) => {
+const HomeCard = ({location,price,name,bed,bath,img,id}) => {
 
     
 
@@ -18,7 +18,7 @@ const HomeCard = ({location,price,name,bed,bath,img}) => {
           </div>
           <div className="w-full pt-5">
           <div className="text-center">
-          <Link to='/single-house' className="text-[17px] text-center font-play uppercase">{name}</Link>
+          <Link to={`/single-house/${id}`} className="text-[17px] text-center font-play uppercase">{name}</Link>
           </div>
           <p className="text-base font-semibold py-4 text-teal-500 text-center">R {price}</p>
           
